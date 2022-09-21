@@ -2,7 +2,7 @@
 
 (1) get cifar png using https://github.com/knjcode/cifar2png. The specific steps are: 
 
-   (i) create a folder named `cifar10png`, cd into it
+   (i) create a folder named `cifar10png` outside of the folder for this repository, cd into it
 
    (ii) run `cifar2png cifar10 png1/`, all cifar10 png will be extracted.
 
@@ -19,7 +19,9 @@ pip install einops ema_pytorch accelerate
 
 (4) change `save_and_sample_every` in `denoising_diffusion_pytorch.py` according to need (here I changed to 100)
 
-(5) a train script is here:
+(5) create a file named `mytrain.py` inside the folder for this repo, `denoising-diffusion-pytorch/mytrain.py`
+
+a train script is here:
 
 ```python
 from denoising_diffusion_pytorch import Unet, GaussianDiffusion, Trainer
@@ -53,6 +55,12 @@ trainer = Trainer(
 trainer.train()
 
 
+```
+
+run it
+
+```
+python3 mytrain.py
 ```
 
 ---
