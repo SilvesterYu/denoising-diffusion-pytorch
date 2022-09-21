@@ -18,12 +18,14 @@ Update: Turns out none of the technicalities really matters at all | <a href="ht
 
 ## Install
 
+---
 silv edits:
 
 Install dependencies
 ```
-pip install beautifulsoup4 defusedxml lxml cycler kiwisolver oauthlib
+pip install beautifulsoup4 defusedxml lxml cycler kiwisolver oauthlib six
 ```
+---
 
 ```bash
 $ pip install denoising_diffusion_pytorch
