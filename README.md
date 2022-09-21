@@ -1,6 +1,10 @@
 ## silv edits:
 
-(1) get cifar png using https://github.com/knjcode/cifar2png
+(1) get cifar png using https://github.com/knjcode/cifar2png. The specific steps are: 
+
+(i) create a folder named `cifar10png`, cd into it
+
+(ii) run `cifar2png cifar10 png1/`, all cifar10 png will be extracted.
 
 (2) get cpu version pytorch
 ```
