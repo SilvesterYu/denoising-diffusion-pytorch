@@ -17,7 +17,7 @@ pip install torch==1.12.0+cpu torchvision==0.13.0+cpu torchaudio==0.12.0 -f http
 pip install einops ema_pytorch accelerate
 ```
 
-(4) change `save_and_sample_every` in `denoising_diffusion_pytorch.py` according to need (here I changed to 100)
+(4) change `save_and_sample_every` in `denoising_diffusion_pytorch.py` according to need (here I set it to 100)
 
 (5) create a file named `mytrain.py` inside the folder for this repo, `denoising-diffusion-pytorch/mytrain.py`
 
