@@ -1,8 +1,17 @@
 ## silv edits:
 
-get cifar png using https://github.com/knjcode/cifar2png
+(1) get cifar png using https://github.com/knjcode/cifar2png
 
+(2) get cpu version pytorch
+```
+pip install torch==1.12.0+cpu torchvision==0.13.0+cpu torchaudio==0.12.0 -f https://download.pytorch.org/whl/torch_stable.html
 
+```
+
+(3) install other dependencies
+```
+pip install einops ema_pytorch accelerate
+```
 
 ---
 
