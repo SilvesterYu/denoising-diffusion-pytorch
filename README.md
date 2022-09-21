@@ -63,6 +63,7 @@ run it
 python3 mytrain.py
 ```
 
+## end of silv edits
 ---
 
 <img src="./images/denoising-diffusion.png" width="500px"></img>
