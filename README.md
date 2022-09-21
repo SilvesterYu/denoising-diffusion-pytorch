@@ -107,6 +107,8 @@ trainer = Trainer(
 trainer.train()
 ```
 
+**change amp to `False` if doesn't work**
+
 Samples and model checkpoints will be logged to `./results` periodically
 
 ## Multi-GPU Training
