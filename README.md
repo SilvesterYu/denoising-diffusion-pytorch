@@ -1,3 +1,11 @@
+## silv edits:
+
+get cifar png using https://github.com/knjcode/cifar2png
+
+
+
+---
+
 <img src="./images/denoising-diffusion.png" width="500px"></img>
 
 ## Denoising Diffusion Probabilistic Model, in Pytorch
