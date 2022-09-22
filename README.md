@@ -14,7 +14,7 @@ pip install torch==1.12.0+cpu torchvision==0.13.0+cpu torchaudio==0.12.0 -f http
 
 (3) install other dependencies
 ```
-pip install einops ema_pytorch accelerate
+pip install einops ema_pytorch accelerate tqdm
 ```
 
 (4) change `save_and_sample_every` in `denoising_diffusion_pytorch.py` according to need (here I set it to 100)
