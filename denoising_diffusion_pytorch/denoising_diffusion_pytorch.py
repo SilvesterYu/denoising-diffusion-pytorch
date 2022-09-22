@@ -741,7 +741,7 @@ class Trainer(object):
         # --
         # save_and_sample_every = 1000,
         # --
-        save_and_sample_every = 1000, # [should edit]
+        save_and_sample_every = 1, # [should edit]
         num_samples = 25,
         results_folder = 'results',
         amp = False,
@@ -769,6 +769,10 @@ class Trainer(object):
 
         self.train_num_steps = train_num_steps
         self.image_size = diffusion_model.image_size
+
+        # --
+        self.results_folder = results_folder
+        # --
 
         # dataset and dataloader
 
