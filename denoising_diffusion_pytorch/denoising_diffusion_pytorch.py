@@ -741,7 +741,7 @@ class Trainer(object):
         # --
         # save_and_sample_every = 1000,
         # --
-        save_and_sample_every = 2, # [should edit]
+        save_and_sample_every = 1000, # [should edit]
         num_samples = 25,
         results_folder = 'results',
         amp = False,
