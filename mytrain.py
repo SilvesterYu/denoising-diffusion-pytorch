@@ -17,7 +17,7 @@ diffusion = GaussianDiffusion(
 
 trainer = Trainer(
     diffusion,
-    '../cifar10png/png1/',
+    '../png1/',
     train_batch_size = 32,
     train_lr = 8e-5,
     train_num_steps = 2,         # [should edit] total training steps
