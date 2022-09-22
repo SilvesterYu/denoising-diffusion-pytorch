@@ -738,9 +738,12 @@ class Trainer(object):
         ema_update_every = 10,
         ema_decay = 0.995,
         adam_betas = (0.9, 0.99),
-        save_and_sample_every = 1000,
+        # --
+        # save_and_sample_every = 1000,
+        # --
+        save_and_sample_every = 100,
         num_samples = 25,
-        results_folder = './results',
+        results_folder = 'results',
         amp = False,
         fp16 = False,
         split_batches = True,
@@ -769,7 +772,13 @@ class Trainer(object):
 
         # dataset and dataloader
 
+        print(train_batch_size)
+
         self.ds = Dataset(folder, self.image_size, augment_horizontal_flip = augment_horizontal_flip, convert_image_to = convert_image_to)
+        print("-"*100)
+        print(self.ds.folder)
+        print(self.ds.image_size)
+        print(train_batch_size)
         dl = DataLoader(self.ds, batch_size = train_batch_size, shuffle = True, pin_memory = True, num_workers = cpu_count())
 
         dl = self.accelerator.prepare(dl)
@@ -856,8 +865,12 @@ class Trainer(object):
 
                 self.step += 1
                 if accelerator.is_main_process:
+                    print("here1")
                     self.ema.to(device)
                     self.ema.update()
+
+                    print("self.step", self.step)
+                    print("%", self.step % self.save_and_sample_every)
 
                     if self.step != 0 and self.step % self.save_and_sample_every == 0:
                         self.ema.ema_model.eval()
@@ -868,6 +881,8 @@ class Trainer(object):
                             all_images_list = list(map(lambda n: self.ema.ema_model.sample(batch_size=n), batches))
 
                         all_images = torch.cat(all_images_list, dim = 0)
+                        print("-"*100)
+                        print(type(all_images))
                         utils.save_image(all_images, str(self.results_folder / f'sample-{milestone}.png'), nrow = int(math.sqrt(self.num_samples)))
                         self.save(milestone)
 
